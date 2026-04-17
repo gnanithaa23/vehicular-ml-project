@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>An Ensemble Deep Learning Model for Vehicular Engine Health Prediction</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+
+<!-- Background image applied to body -->
+<body style="
+  background: url('{% static 'images/background.jpg' %}') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+">
+
+  <div class="main" style="background-color: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 15px; max-width: 1100px; margin: 30px auto; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+    <div class="main_resize">
+
+      <!-- Header -->
+      <header class="header" style="text-align: center; padding: 20px 0;">
+        <div class="logo">
+          <h1>
+            <span>An Ensemble Deep Learning Model for Vehicular Engine Health Prediction</span>
+          </h1>
+        </div>
+      </header>
+
+      <!-- Menu -->
+      <nav class="menu_nav" style="text-align: center; margin-bottom: 20px;">
+        <ul style="display: inline-block; list-style: none; padding: 0;">
+          <li style="display: inline; margin: 0 15px;"><a href="{% url 'index' %}">Home</a></li>
+          <li style="display: inline; margin: 0 15px;"><a href="{% url 'UserLogin' %}">User Login</a></li>
+          <li style="display: inline; margin: 0 15px;"><a href="{% url 'Signup' %}">New User Signup Here</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Image -->
+      <div class="hbg" style="text-align: center;">
+        <img src="{% static 'images/header_images.png' %}" width="915" height="286" alt="Header Image" style="max-width: 100%; border-radius: 8px;">
+      </div>
+
+      <!-- Dynamic Content -->
+      <div style="text-align: center; margin: 20px 0;">
+        {{ data }}
+      </div>
+
+      <!-- Paragraph -->
+      <section style="padding: 0 20px;">
+        <p align="justify" style="font-family: 'Comic Sans MS'; font-size: 16px; color: #000; line-height: 1.6;">
+          An Ensemble Deep Learning Model for Vehicular Engine Health Prediction 
+        </p>
+      </section>
+<footer style="text-align:center; opacity:0.4; font-size:12px;">
+  Powered by <strong>E-CLS</strong>
+</footer>
+    </div>
+  </div>
+
+</body>
+</html>

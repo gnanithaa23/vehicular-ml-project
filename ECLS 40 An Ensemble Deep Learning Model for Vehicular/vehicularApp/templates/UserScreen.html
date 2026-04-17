@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>An Ensemble Deep Learning Model for Vehicular Engine Health Prediction</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="
+  background: url('{% static 'images/background.jpg' %}') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0; padding: 0;
+">
+
+  <div class="main" style="
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 1100px;
+    margin: 40px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  ">
+    <div class="main_resize">
+
+      <div class="header" style="text-align: center; margin-bottom: 20px;">
+        <div class="logo">
+          <h1><span>An Ensemble Deep Learning Model for Vehicular Engine Health Prediction</span></h1>
+        </div>
+      </div>
+
+      <div class="menu_nav" style="text-align: center; margin-bottom: 30px;">
+        <ul style="
+          display: inline-flex;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          gap: 25px;
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+        ">
+          <li><a href="{% url 'ProcessData' %}" style="text-decoration:none; padding: 8px 16px; background:#4CAF50; color: white; border-radius: 6px; display: inline-block;">Load & Preprocess Dataset</a></li>
+          <li><a href="{% url 'TrainLSTM' %}" style="text-decoration:none; padding: 8px 16px; background:#2196F3; color: white; border-radius: 6px; display: inline-block;">Ensemble Neural Network Classifier</a></li>
+          <li><a href="{% url 'TrainRF' %}" style="text-decoration:none; padding: 8px 16px; background:#FF9800; color: white; border-radius: 6px; display: inline-block;">RF-Ensemble Classifier</a></li>
+          <li><a href="{% url 'Predict' %}" style="text-decoration:none; padding: 8px 16px; background:#9C27B0; color: white; border-radius: 6px; display: inline-block;">Vehicular Engine Health Prediction</a></li>
+          <li><a href="{% url 'index' %}" style="text-decoration:none; padding: 8px 16px; background:#f44336; color: white; border-radius: 6px; display: inline-block;">Logout</a></li>
+        </ul>
+      </div>
+
+      <div class="hbg" style="text-align: center; margin-bottom: 20px;">
+        <img src="{% static 'images/header_images.png' %}" width="915" height="286" alt="Header Image" style="max-width: 100%; border-radius: 10px;">
+      </div>
+
+      <div style="color: red; font-weight: bold; font-size: 1.1rem; text-align: center;">
+        {{ data|safe }}
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

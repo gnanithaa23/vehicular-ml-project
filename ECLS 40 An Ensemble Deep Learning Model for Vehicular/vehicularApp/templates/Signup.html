@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>An Ensemble Deep Learning Model for Vehicular Engine Health Prediction</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+  <script language="javascript">
+    function validate(formObj) {
+      if(formObj.t1.value.length==0) {
+        alert("Please Enter username");
+        formObj.t1.focus();
+        return false;
+      }
+      if(formObj.t2.value.length==0) {
+        alert("Please Enter password");
+        formObj.t2.focus();
+        return false;
+      }
+      if(formObj.t3.value.length==0) {
+        alert("Please Enter Contact No");
+        formObj.t3.focus();
+        return false;
+      }
+      if(isNaN(formObj.t3.value)){
+        alert("Contact No must be numeric");
+        formObj.t3.focus();
+        return false;
+      }
+      if(formObj.t5.value.length==0) {
+        alert("Please Enter Email Id");
+        formObj.t5.focus();
+        return false;
+      }
+      var filter = /^([a-zA-Z0-9_\.\-])+\@([a-z]+\.)+(com)+$/;
+      if (!filter.test(formObj.t5.value)) {
+        window.alert('Please enter valid email address');
+        formObj.t5.focus();
+        return false;
+      }
+      if(formObj.t6.value.length==0) {
+        alert("Please Enter Address");
+        formObj.t6.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+  <script language="javascript" type="text/javascript" src="datetimepicker.js"></script>
+</head>
+
+<body style="
+  background: url('{% static 'images/background.jpg' %}') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0; padding: 0;
+">
+
+  <div class="main" style="
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 1100px;
+    margin: 40px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  ">
+    <div class="main_resize">
+
+      <div class="header" style="text-align: center;">
+        <div class="logo">
+          <h1><span>An Ensemble Deep Learning Model for Vehicular Engine Health Prediction</span></h1>
+        </div>
+      </div>
+
+      <div class="menu_nav" style="text-align: center; margin-bottom: 20px;">
+        <ul style="display: inline-block; list-style: none; padding: 0;">
+          <li style="display: inline; margin: 0 15px;"><a href="{% url 'index' %}">Home</a></li>
+          <li style="display: inline; margin: 0 15px;"><a href="{% url 'UserLogin' %}">User Login</a></li>
+          <li style="display: inline; margin: 0 15px;"><a href="{% url 'Signup' %}">New User Signup Here</a></li>
+        </ul>
+      </div>
+
+      <div class="hbg" style="text-align: center; margin-bottom: 20px;">
+        <img src="{% static 'images/header_images.png' %}" width="915" height="286" alt="Header Image" style="max-width: 100%; border-radius: 10px;">
+      </div>
+
+      <form name="f1" method="post" action="{% url 'SignupAction' %}" onsubmit="return validate(this);" style="text-align: center;">
+        {% csrf_token %}
+        <h2><b>New User Signup Screen</b></h2>
+
+        <div style="color: red; font-weight: bold;">{{ data|safe }}</div><br/>
+
+        <table align="center" style="margin: 0 auto; font-family: Comic Sans MS; width: 30%;">
+          <tr>
+            <td align="right" style="padding: 10px;"><label for="t1">Username</label></td>
+            <td><input type="text" name="t1" size="30" style="padding: 5px;"></td>
+          </tr>
+          <tr>
+            <td align="right" style="padding: 10px;"><label for="t2">Password</label></td>
+            <td><input type="password" name="t2" size="30" style="padding: 5px;"></td>
+          </tr>
+          <tr>
+            <td align="right" style="padding: 10px;"><label for="t3">Contact No</label></td>
+            <td><input type="text" name="t3" size="15" style="padding: 5px;"></td>
+          </tr>
+          <tr>
+            <td align="right" style="padding: 10px;"><label for="t4">Gender</label></td>
+            <td>
+              <select name="t4" style="font-family: Comic Sans MS; padding: 5px;">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" style="padding: 10px;"><label for="t5">Email ID</label></td>
+            <td><input type="text" name="t5" size="50" style="padding: 5px;"></td>
+          </tr>
+          <tr>
+            <td align="right" style="padding: 10px;"><label for="t6">Address</label></td>
+            <td><input type="text" name="t6" size="70" style="padding: 5px;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding: 10px;"><input type="submit" value="Submit" style="padding: 5px 15px;"></td>
+          </tr>
+        </table>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>
