@@ -2,7 +2,6 @@
 
 ## 📌 Overview
 This project is a machine learning-based vehicular prediction system that uses an ensemble of deep learning and traditional models to analyze vehicle data and provide accurate predictions.
-
 ---
 
 ## 🚀 Features
